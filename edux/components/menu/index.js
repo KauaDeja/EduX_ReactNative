@@ -3,48 +3,45 @@ import { View } from 'react-native';
 import { Button, Menu, Divider, Provider, Appbar } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 import logo from '../../assets/img/logobranco.png'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
+
+
+
 
 export const MenuEdux = () => {
-    const [visible, setVisible] = React.useState(false);
-  
-    const openMenu = () => setVisible(true);
-  
-    const closeMenu = () => setVisible(false);
-
+   
     return (
-      <Appbar style={styles.bottom}>
-         
-      <Appbar.Action icon="menu" onPress={openMenu}   
-       onDismiss={closeMenu} style={{margintop:10}}>
-       <Menu.Item onPress={() => {}} title="Teste" />
-       <Menu.Item onPress={() => {}} title="Teste" />
-       <Divider />
-       <Menu.Item onPress={() => {}} title="Teste" />
-      </Appbar.Action>
-      
-      
-      
-      <Appbar.Action
-        size={50}
-        style={{marginLeft:240, margintop:20}}
+      <Appbar style={styles.top}>
+
+
+     <Appbar.Action
+        size={75}
+        style={{marginBottom:-10}}
         icon={logo}
         onPress={() => console.log('Retorna ao inicio')}>
       </Appbar.Action>
 
-     
-    
+      <Appbar.Action 
+      style={{marginLeft:190,marginBottom:-10}}
+      onPress={() => console.log('Fazer checkout')}>
+        <View>
+        <FontAwesomeIcon icon={faSignOutAlt} color={'red'}></FontAwesomeIcon>   
+        </View>
+      </Appbar.Action>
+       
     </Appbar>
      
     );
   };
  
   const styles = StyleSheet.create({
-    bottom: {
+    top: {
       position: 'absolute',
       left: 0,
       right: 0,
       top: 0,
-      backgroundColor:'#083E76'
+      backgroundColor:'#9200D6'
     },
   });
  
