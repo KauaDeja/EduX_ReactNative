@@ -6,14 +6,14 @@ import MenuEdux from './components/menu';
 
 export default function App() {
   return (
-  <MenuEdux/>    
+  <MenuEdux />    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffff00',
     alignItems: 'center',
     justifyContent: 'center',
   },

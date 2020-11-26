@@ -14,22 +14,24 @@ export const MenuEdux = () => {
     return (
       <Appbar style={styles.bottom}>
          
-      <Appbar.Action icon="menu"   
-        visible={visible}
-        onDismiss={closeMenu}
-        anchor={<Button onPress={openMenu}></Button>}>
-        <Menu.Item onPress={() => {}} title="Teste" />
-        <Menu.Item onPress={() => {}} title="Teste" />
-        <Divider />
-        <Menu.Item onPress={() => {}} title="Teste" />
-     </Appbar.Action>
+      <Appbar.Action icon="menu" onPress={openMenu}   
+       onDismiss={closeMenu} style={{margintop:10}}>
+       <Menu.Item onPress={() => {}} title="Teste" />
+       <Menu.Item onPress={() => {}} title="Teste" />
+       <Divider />
+       <Menu.Item onPress={() => {}} title="Teste" />
+      </Appbar.Action>
+      
+      
       
       <Appbar.Action
         size={50}
-        style={{marginLeft:240}}
+        style={{marginLeft:240, margintop:20}}
         icon={logo}
-        onPress={() => console.log('Retorna ao inicio')}
-      />
+        onPress={() => console.log('Retorna ao inicio')}>
+      </Appbar.Action>
+
+     
     
     </Appbar>
      
@@ -41,7 +43,7 @@ export const MenuEdux = () => {
       position: 'absolute',
       left: 0,
       right: 0,
-      bottom: 0,
+      top: 0,
       backgroundColor:'#083E76'
     },
   });
