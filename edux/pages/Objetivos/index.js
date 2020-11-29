@@ -1,21 +1,23 @@
 import React from 'react';
 import MenuEdux from '../../components/menu';
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
-import background from '../../assets/img/educacao1.jpg'
-import { Height, Opacity } from '@material-ui/icons';
+import { Text, View } from "react-native";
 import AppBarEdux from '../../components/appbar'
-
-
-
-
-
+import {useFonts,
+  TitilliumWeb_400Regular,
+  TitilliumWeb_700Bold,
+} from '@expo-google-fonts/dev'
 
 const Objetivo = () =>{
+    useFonts({TitilliumWeb_400Regular,TitilliumWeb_700Bold});
     return(
      <View>
        <MenuEdux></MenuEdux>
-        <Text>Objetivos</Text>
-        
+       <View>
+        <Text style={{textAlign:'center',
+         textTransform:'uppercase', fontSize:40,fontFamily:TitilliumWeb_400Regular , color:'#9200D6', marginTop:120 }}>
+           Objetivos
+        </Text>
+       </View>
         <AppBarEdux></AppBarEdux>
      </View>
      )
