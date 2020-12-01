@@ -3,7 +3,7 @@ import { Appbar } from 'react-native-paper';
 import { StyleSheet, View,Text } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faChalkboardTeacher, faGraduationCap, faSchool } from '@fortawesome/free-solid-svg-icons';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler';
 
 
 
@@ -20,29 +20,29 @@ const AppBarEdux = () => (
 
  <View style={styles.container}>
    
- <TouchableHighlight  onPress={() => console.log('Direcionar para Inicio')} underlayColor='#00B751'>
+ <TouchableOpacity  onPress={() => console.log('Direcionar para Inicio')} color='#00B751'>
  <View >
   <FontAwesomeIcon icon={faSchool} color={'white'} size={35} style={{alignSelf:'center'}} >
  </FontAwesomeIcon>
   <Text style={styles.buttonText}>Inicio</Text>
  </View>
-</TouchableHighlight>
+</TouchableOpacity>
 
-<TouchableHighlight style={styles.allignitems} onPress={() => console.log('Direcionar para Turmas')} underlayColor='#00B751'>
+<TouchableOpacity style={styles.allignitems} onPress={() => console.log('Direcionar para Turmas')} color='#00B751'>
  <View style={styles.allignitems}>
  <FontAwesomeIcon icon={faChalkboardTeacher} color={'white'} size={35} style={{alignSelf:'center'}}  >
  </FontAwesomeIcon>
  <Text style={styles.buttonText}>Turmas</Text>
  </View>
-</TouchableHighlight>
+</TouchableOpacity>
 
-<TouchableHighlight style={styles.allignitems} onPress={() => console.log('Direcionar para Objetivos')} underlayColor='#00B751'> 
+<TouchableOpacity style={styles.allignitems} onPress={() => console.log('Direcionar para Objetivos')} color='#00B751'> 
  <View style={styles.allignitems}>
  <FontAwesomeIcon icon={faGraduationCap} color={'white'} size={35} style={{alignSelf:'center'}} >
  </FontAwesomeIcon>
  <Text style={styles.buttonText}>Objetivos</Text>
  </View>
-</TouchableHighlight>
+</TouchableOpacity>
  
  </View > 
 
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     flex:1,
-    top:615,
+    bottom:-764,
     backgroundColor:'#00D65F'
   },
   buttonText: {
