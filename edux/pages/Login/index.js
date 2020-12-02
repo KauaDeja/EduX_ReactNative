@@ -52,24 +52,20 @@ const Login = ( {navigation} ) => {
     return (
         // HTML
         <View style={styles.container}>
-            <Image
-                style={styles.logo}
-                source={{
-                    uri: 'https://lh3.googleusercontent.com/fife/ABSRlIrsFPvw8BQHWD9cIDs20ikOeVhFC30xDnKjrAJca7Ap5T82ycDS8Y0d1KZ9CDwlIFv2PO2AFELtq2BXEc1d4aFLdrAX8C4dgeO_mRXmXTSaqtn8FmSzr9iy_KPcJWFIwAvXsW_nfbeFXYrpCWb2C8j_mQ510wjYXTVo9Zt5hoDJkhMqb1b5311JGu1k3lLG0l-0GFVkZjwfVJ1U4Ffg5dZqQJF22KLgwF5iaRugwvw5TnLb6mwLkugfBSZ74CETGEVJDDi0HHzUfnDSiST3_fJo_T5ElRIccc8NTeiF-8AnIisTkIR97sk_KoiwrDqEOZCEexpYVMBuIMCvHTrHIsLjK3MsCeBJYKR-xSj1tFSOJCsjQV2l2n-jcf0UfS3p1V6eMVads9iLQCY6vvTZK0i5H9rtTmjy1gXFkgx21sqwPdYH26QBp6vkUgDmHem7vfFZkoYzi52zyRidQ4MPbbvDc-fVl2amZDHUBmOTsS9qi8kiQJk6jSIDiRuQu3HfS2maloq9YK9d_7XcvbiP16QqYicgUKC2_VWyEVRB1WBlCJVa3bKF7in-HLxj3nL1qmfWDIh93X2O6OCSLmnD2e9CtKbhRb_F4Fl5HIorNaA0hmonXZHWRnxfulVc9fvt4Qbvq2GVuh77wYVc7QKbEOPlXh18HnoyuAP86y1pM0v6qKl3P7l1Q42OoFvjyNmNVrRZpnObef3lv4FVf2V5H2ewU8ymI_aQ=w1349-h635-ft?authuser=0',
-                }}
-            />
+           <Text style={styles.textTitulo}>EduX</Text>
+           <Text style={styles.textSubTitulo}>LOGIN</Text>
             <TextInput
                 style={styles.input}
                 onChangeText={text => setEmail(text)}
                 value={email}
-                placeholder="  Email"
+                placeholder="Email"
             />
 
             <TextInput
                 style={styles.input}
                 onChangeText={text => setSenha(text)}
                 value={senha}
-                placeholder="  Senha"
+                placeholder="Senha"
                 secureTextEntry={true}// Deixa a senha invísivel
             />
             <TouchableOpacity
@@ -101,8 +97,6 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop: 30,
         backgroundColor: '#ffffff',
-        fontWeight: 'bold',
-
     },
     button: {
         backgroundColor: 'white',
@@ -112,8 +106,7 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         marginTop: 30,
         alignItems: 'center',
-        justifyContent: 'center',
-        fontWeight: 'bold',
+        justifyContent: 'center', 
 
     },
     textButton: {
@@ -121,10 +114,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
 
     },
-    logo: {
-        width: 200,
-        height: 100,
-        marginBottom: 60,
+    textTitulo: {
+      fontSize: 70,
+      color: 'white',
+      fontWeight: 'bold',
+     
+    },
+    textSubTitulo:{
+        color: 'white',
+     
+
     }
 });
 

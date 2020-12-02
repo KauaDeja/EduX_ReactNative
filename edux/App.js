@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 // Navigation
@@ -16,12 +16,13 @@ const Tab = createMaterialBottomTabNavigator();
 
 // Páginas
 import Login from './pages/Login';
-import Inicio from './pages/Inicio';
+import Ranking from './pages/Ranking';
+
 
 const Autenticado = () => {
   return (
-    <Tab.Navigator initialRouteName="Inicio">
-      <Tab.Screen name="Inicio" component={Inicio} />
+    <Tab.Navigator initialRouteName="Ranking" >
+      <Tab.Screen name="Ranking"  component={Ranking} />
     </Tab.Navigator>
 
   );
@@ -32,7 +33,8 @@ export default function App() {
     <NavigationContainer>
       {// Ao deixar o headershow como falso, ele para de exibir o menu do topo
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Login" component={Login} />
+          {//<Stack.Screen name="Login" component={Login} />
+          }
           <Stack.Screen name="Autenticado" component={Autenticado} />
         </Stack.Navigator>
       }
