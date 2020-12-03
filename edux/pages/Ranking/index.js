@@ -1,29 +1,87 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Text } from 'react-native-elements';
-
-
+import ItemUsuario from '../../components/ItemUsuario';
 
 const Ranking = () => {
+    // get set
+    const [usuario, setUsuario] = useState([]);
+
+    // Assim que a pagina carregar ele ja renderiza o primeiro efeito
+    useEffect(() => {
+        listarUsuario();
+    }, [])
+
+    // Método-GET
+    const listarUsuario = () => {
+        fetch(`http://192.168.0.18:5000/api/usuario`)// ip e usuario
+            .then(response => response.json())
+            .then(dados => {
+                // pega o eventos
+                setUsuario(dados.data);
+                console.log(dados.data);
+            })
+            .catch(err => console.error(err));
+    }
+    // metodo que renderiza todas as propriedades do usuario
+    const renderItem = (usuario) => {
+        return (
+            <ItemUsuario
+                AlunoTurma={usuario.item.AlunoTurma}
+                ObjetivoAluno={usuario.item.ObjetivoAluno}
+                dObjetivoNavigation={usuario.item.dObjetivoNavigation} />
+        )
+    }
+
     return (
-        <View style={styles.container}>
+        <View>
             <Text style={styles.tituloRanking}>RANKING GERAL</Text>
-            <View style={styles.divPai}>
-                    <Image style={styles.avatar}
-                        source={{
-                            uri:
-                                'https://i.redd.it/al020w7l9g841.jpg',
-                        }}
-                    >
-                    </Image>
-                <View  style={styles.divTexto}>
-                    <Text h5 style={styles.texto1}>Kaua Deja da Silva</Text>
-                    <Text h7 style={styles.texto1}>2° Desenvolvimento de Sistemas</Text>
+
+            <View style={{ alignSelf: 'center', flexDirection: "row", justifyContent: 'center', backgroundColor: '#9200D3', borderRadius: 30, marginTop: 15 }}>
+                <View style={{ flexDirection: "row", justifyContent: 'center' }}>
+                    <Image source="https://avatarfiles.alphacoders.com/125/125919.jpg" style={{ width: 60, height: 60, borderRadius: 30 }} />
+                    <View style={{ alignSelf: 'center', padding: 9 }}>
+                        <Text h5 style={styles.texto1}>Kaua Deja da Silva</Text>
+                        <Text h7 style={styles.texto1}>2° Desenvolvimento de Sistemas</Text>
+                    </View>
                 </View>
             </View>
 
+            <View style={{ marginTop: 50, }}>
+                <View style={{ alignSelf: 'center', alignItems: 'center' }}>
+                    <View style={[styles.ranking, { backgroundColor: '#00D65F' }]}>
+                        <Text style={styles.number}>3333</Text>
+                        <Text style={{ color: 'white' }}>33333</Text>
+                        <Text style={styles.bottomText}>33333</Text>
+                    </View>
+                </View>
+
+                <View style={{ alignSelf: 'center', flexDirection: 'row', }}>
+                    <View style={[styles.ranking, { marginRight: 70, backgroundColor: '#00C2EE' }]}>
+                        <Text style={styles.number}>22222</Text>
+                        <Text style={{ color: 'white' }}>22222</Text>
+                        <Text style={styles.bottomText}>2222</Text>
+                    </View>
+
+                    <View style={[styles.ranking, { backgroundColor: '#9200D6' }]}>
+                        <Text style={styles.number}>2222</Text>
+                        <Text style={{ color: 'white' }}>2222</Text>
+                        <Text style={styles.bottomText}>11111</Text>
+                    </View>
+                </View>
+
+                <View style={{ alignSelf: 'center' }}>
+                    <View style={[styles.ranking, { backgroundColor: '#FF271C' }]}>
+                        <Text style={styles.number}>1111</Text>
+                        <Text style={{ color: 'white' }}>11111</Text>
+                        <Text style={styles.bottomText}>11111</Text>
+                    </View>
+                </View>
+            </View>
 
         </View>
+
 
     )
 
@@ -39,38 +97,28 @@ const styles = StyleSheet.create({
     tituloRanking: {
         flex: 1,
         textAlign: 'center',
-        marginTop: 60,
+        marginTop: 45,
         fontSize: 23,
         color: 'purple',
         fontWeight: 'bold',
     },
-    avatar: {
-        flex: 1,
-        width: 70,
-        height: 67,
-        borderRadius: 35,
-        marginTop: -150,
-        marginBottom: 250,
-        borderColor: 'purple',
-        borderWidth: 2,
-        marginLeft: 20,
+    texto1: {
+        color: 'white',
+    },
+    ranking: {
+        flexDirection: 'column', 
+        textAlign: 'center', 
+        backgroundColor: '#9200D6' , 
+        borderRadius: 80,
+        padding: 20,
+        paddingLeft: 40,
+        paddingRight: 40,
+        alignItems: 'center'
+        
+    },
 
-    },
-    divPai: {
-        width: '100%',
-        height: '100%',
-        justifyContent: 'space-around',
-        flex: 1,
-        flexDirection: 'row',
-    },
-    divTexto: {
-        marginTop: -135,
-        marginLeft: 50,
-        marginRight: 30,
-    },
 
 });
-
 
 
 
