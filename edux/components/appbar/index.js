@@ -7,6 +7,7 @@ import { TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handl
 
 
 
+
 const AppBarEdux = () => (
 
 <Appbar  className='hoverIcons' style={styles.bottom}>
@@ -15,33 +16,25 @@ const AppBarEdux = () => (
   flex:1,
   flexDirection:'row',
   justifyContent:'space-around', 
-}}  
->
-
+}}>
  <View style={styles.container}>
    
- <TouchableOpacity  onPress={() => console.log('Direcionar para Inicio')} color='#00B751'>
- <View >
+ <TouchableOpacity  onPress={() => console.log('Direcionar para Inicio')} >
   <FontAwesomeIcon icon={faSchool} color={'white'} size={35} style={{alignSelf:'center'}} >
  </FontAwesomeIcon>
   <Text style={styles.buttonText}>Inicio</Text>
- </View>
 </TouchableOpacity>
 
-<TouchableOpacity style={styles.allignitems} onPress={() => console.log('Direcionar para Turmas')} color='#00B751'>
- <View style={styles.allignitems}>
+<TouchableOpacity style={styles.allignitems}  color='#00B751' >
  <FontAwesomeIcon icon={faChalkboardTeacher} color={'white'} size={35} style={{alignSelf:'center'}}  >
  </FontAwesomeIcon>
- <Text style={styles.buttonText}>Turmas</Text>
- </View>
+    <Text style={styles.buttonText}>Turmas</Text>
 </TouchableOpacity>
 
 <TouchableOpacity style={styles.allignitems} onPress={() => console.log('Direcionar para Objetivos')} color='#00B751'> 
- <View style={styles.allignitems}>
  <FontAwesomeIcon icon={faGraduationCap} color={'white'} size={35} style={{alignSelf:'center'}} >
  </FontAwesomeIcon>
  <Text style={styles.buttonText}>Objetivos</Text>
- </View>
 </TouchableOpacity>
  
  </View > 
@@ -63,7 +56,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     flex:1,
-    bottom:-764,
+    bottom:0,
     backgroundColor:'#00D65F'
   },
   buttonText: {
