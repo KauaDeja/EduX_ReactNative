@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { Button, Menu, Divider, Provider, Appbar } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
+import { Appbar } from 'react-native-paper';
+import { StyleSheet,Alert } from 'react-native';
 import logo from '../../assets/img/logobranco.png'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
@@ -13,15 +13,35 @@ import { TouchableHighlight } from 'react-native-gesture-handler';
 
 export const MenuEdux = () => {
    
+  const Logout = () =>{
+    Alert.alert(
+      "Sair",
+      "Deseja sair?",
+      [
+        {
+          text: "Não",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "Sim", onPress: () => {
+          AsyncStorage.removeItem('@jwt');
+          navigation.push('Login');
+        } }
+      ],
+      { cancelable: false }
+    );
+  }
+
+
     return (
-      <Appbar style={styles.top}>
+     <Appbar style={styles.top}>
      <Appbar.Action
         size={100}
         icon={logo} 
         onPress={() => console.log('Retorna ao inicio')}>
       </Appbar.Action>
 
-      <TouchableHighlight onPress={() => console.log('Fazer logout')}  >
+      <TouchableHighlight onPress={Logout}  >
         <FontAwesomeIcon icon={faSignOutAlt}
         color={'white'}
         style={{marginRight:30}}

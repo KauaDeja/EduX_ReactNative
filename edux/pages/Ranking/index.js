@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 import { Text } from 'react-native-elements';
 import ItemUsuario from '../../components/ItemUsuario';
+import MenuEdux from '../../components/menu';
 
 const Ranking = () => {
     // get set
@@ -36,6 +37,7 @@ const Ranking = () => {
 
     return (
         <View>
+            <MenuEdux/>
             <Text style={styles.tituloRanking}>RANKING GERAL</Text>
 
             <View style={{ alignSelf: 'center', flexDirection: "row", justifyContent: 'center', backgroundColor: '#9200D3', borderRadius: 30, marginTop: 15 }}>
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
     tituloRanking: {
         flex: 1,
         textAlign: 'center',
-        marginTop: 45,
+        marginTop: 90,
         fontSize: 23,
         color: 'purple',
         fontWeight: 'bold',

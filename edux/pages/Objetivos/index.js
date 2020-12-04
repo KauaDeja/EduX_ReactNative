@@ -51,7 +51,6 @@ const renderItem = ({item}) => {
     return(
      <View>
        <MenuEdux></MenuEdux>
-       
        <View>
         <Text style={styles.title}>
            Objetivos
@@ -63,8 +62,6 @@ const renderItem = ({item}) => {
         />
 
        </View>
-
-        <AppBarEdux></AppBarEdux>
      </View>
      )
 }

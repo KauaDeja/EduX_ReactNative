@@ -38,9 +38,8 @@ const Login = ( {navigation} ) => {
             if(data.status != 404){
                 alert('Seja bem vindo');
                 console.log(data.token);
-                
                 salvar(data.token);
-                navigation.push('Autenticado');
+                navigation.push('EduX')
             }else{
                 alert('Email ou senha inválidos! :( ');
             }
