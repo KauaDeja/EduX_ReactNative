@@ -6,12 +6,13 @@ import logo from '../../assets/img/logobranco.png'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
 
 
-export const MenuEdux = () => {
+export const MenuEdux = ({navigation}) => {
    
   const Logout = () =>{
     Alert.alert(
