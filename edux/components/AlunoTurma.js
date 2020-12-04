@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#F7F7F7',
       marginTop:60
     },
-    listItem:{
+    listAlunoTurma:{
       margin:10,
       padding:10,
       backgroundColor:"#FFF",
@@ -23,7 +23,7 @@ const AlunoTurmas = (Aluno) => {
     const {matricula, IdUsuario, IdTurma} = Aluno;
 
     return (
-        <View style={styles.listItem}>
+        <View style={styles.listAlunoTurma}>
             <View style={{alignItems:"center",flex:1}}>
                 <Text style={{fontWeight:"bold"}}>{matricula}</Text>
                 <Text style={{fontWeight:"bold"}}>{IdUsuario}</Text>
