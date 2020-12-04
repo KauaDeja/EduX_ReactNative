@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+
 // Navigation
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -17,12 +18,15 @@ const Tab = createMaterialBottomTabNavigator();
 // Páginas
 import Login from './pages/Login';
 import Ranking from './pages/Ranking';
+import Objetivo from './pages/Objetivos'
 
 
 const Autenticado = () => {
   return (
     <Tab.Navigator initialRouteName="Ranking" >
       <Tab.Screen name="Ranking"  component={Ranking} />
+      <Tab.Screen name="Objetivos" component={Objetivo} />
+
     </Tab.Navigator>
 
   );
@@ -30,22 +34,14 @@ const Autenticado = () => {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      {// Ao deixar o headershow como falso, ele para de exibir o menu do topo
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          {//<Stack.Screen name="Login" component={Login} />
-          }
-          <Stack.Screen name="Autenticado" component={Autenticado} />
-        </Stack.Navigator>
-      }
-    </NavigationContainer>
+   <Ranking/>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffff00',
     alignItems: 'center',
     justifyContent: 'center',
   },
