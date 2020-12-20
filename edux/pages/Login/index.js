@@ -25,7 +25,7 @@ const Login = ( {navigation} ) => {
             senha : senha
         }
         // Ao invés de passarmos a o localhost, agora é o IP
-        fetch('http://192.168.1.12:5000/api/login', {
+        fetch('https://localhost:5001/api/login', {
             method: 'POST',
             headers :{
                 'content-type' : 'application/json'
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     },
     input: {
         width: '70%',
-        height: 35,
+        height: 40,
         borderColor: 'gray',
         borderWidth: 1,
         borderRadius: 6,

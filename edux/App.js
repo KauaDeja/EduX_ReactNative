@@ -2,7 +2,7 @@ import React from 'react';
 
 //Pages
 //import Home from './pages/Home'
-//import Turmas from './pages/Turma'
+import Turma from './pages/Turma'
 import Objetivos from './pages/Objetivos'
 import Login from './pages/Login'
 //import Postagem from './pages/Postagem'
@@ -16,11 +16,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome5 } from '@expo/vector-icons'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import AlunoTurma from './pages/AlunoTurma';
 
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
-const Stack  = createStackNavigator();
+const Stack = createStackNavigator();
 
 const Hidden = () => {
   return null;
@@ -73,12 +74,13 @@ const BottomTabNavigator = () => {
 }
 
 const Autenticado = () => {
-  return(
-      <Drawer.Navigator >
+  return (
+    <Drawer.Navigator >
       <Drawer.Screen name="BottomTabNavigator" component={BottomTabNavigator} options={{ drawerLabel: "Home" }} />
-      {/* <Drawer.Screen name="Timeline" component={Postagem} options={{ drawerLabel: "Timeline" }} /> */}
+      <Drawer.Screen name="AlunoTurma" component={AlunoTurma} options={{ drawerLabel: "AlunoTurma" }} />
       <Drawer.Screen name="Alunos" component={Objetivos} options={{ drawerLabel: "Alunos" }} />
-      </Drawer.Navigator>
+      <Drawer.Screen name="Turma" component={Turma} options={{ drawerLabel: "Turma" }} />
+    </Drawer.Navigator>
   )
 }
 
@@ -87,7 +89,7 @@ export default function App({ navigation }) {
   return (
     <NavigationContainer>
       <Stack.Navigator >
-        <Stack.Screen name="Login" component={Login} options={{ headerShown: false, drawerLabel: Hidden }} />
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false, drawerLabel: Hidden }} />
         <Stack.Screen name="EduX" component={Autenticado} options={{ headerShown: false, drawerLabel: Hidden }} />
       </Stack.Navigator>
     </NavigationContainer>
