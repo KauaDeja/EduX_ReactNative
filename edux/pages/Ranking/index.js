@@ -21,7 +21,7 @@ const Ranking = () => {
 
     // Método-GET
     const listarUsuario = () => {
-        fetch(`https://localhost:5001/api/usuario`)// ip e usuario
+        fetch(`http://192.168.1.27:5000/api/usuario`)// ip e usuario
             .then(response => response.json())
             .then(dados => {
                 // pega o eventos

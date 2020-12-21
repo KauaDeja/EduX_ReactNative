@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import AlunoTurmas from '../../components/AlunoTurma';
+import MenuEdux from '../../components/menu';
 
 const AlunoTurma = () => {
 
@@ -13,7 +14,7 @@ const AlunoTurma = () => {
   const [idTurma, setTurma] = useState([]);
 
   const Get = () => {
-    fetch('https://localhost:5001/ap/AlunoTurma')
+    fetch('http://192.168.1.27:5000/api/AlunoTurma')
       .then(response => response.json())
       .then(data => {
         setMatricula(data.data)
@@ -30,6 +31,7 @@ const AlunoTurma = () => {
 
   return (
     <View style={styles.container}>
+      <MenuEdux></MenuEdux>
       <Text style={styles.Matricula}>Matricula : </Text>
       <View style={styles.flat}>
         <FlatList

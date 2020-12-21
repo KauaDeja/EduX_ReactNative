@@ -31,7 +31,7 @@ const Hidden = () => {
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator initialRouteName="Ranking"
+    <Tab.Navigator initialRouteName="Início"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           let iconName;
@@ -64,7 +64,7 @@ const BottomTabNavigator = () => {
       }>
       <Tab.Screen name="Início" component={Ranking} />
 
-      {/* <Tab.Screen name="Turmas" component={Login} /> */}
+      <Tab.Screen name="Turmas" component={Turma} />
 
       <Tab.Screen name="Objetivos" component={Objetivos} />
 
@@ -76,7 +76,7 @@ const BottomTabNavigator = () => {
 const Autenticado = () => {
   return (
     <Drawer.Navigator >
-      <Drawer.Screen name="BottomTabNavigator" component={BottomTabNavigator} options={{ drawerLabel: "Home" }} />
+      <Drawer.Screen name=" BottomTabNavigator" component={BottomTabNavigator} options={{ drawerLabel: "Home" }} />
       <Drawer.Screen name="AlunoTurma" component={AlunoTurma} options={{ drawerLabel: "AlunoTurma" }} />
       <Drawer.Screen name="Alunos" component={Objetivos} options={{ drawerLabel: "Alunos" }} />
       <Drawer.Screen name="Turma" component={Turma} options={{ drawerLabel: "Turma" }} />

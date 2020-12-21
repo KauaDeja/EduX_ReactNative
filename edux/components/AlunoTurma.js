@@ -10,12 +10,11 @@ const styles = StyleSheet.create({
     listAlunoTurma:{
       margin:10,
       padding:10,
-      backgroundColor:"#FFF",
+      backgroundColor:"#00B751",
       width:"80%",
       flex:1,
       alignSelf:"center",
-      flexDirection:"row",
-      borderRadius:5
+      borderRadius:12
     }
   });
 

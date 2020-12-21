@@ -25,7 +25,7 @@ const Login = ( {navigation} ) => {
             senha : senha
         }
         // Ao invés de passarmos a o localhost, agora é o IP
-        fetch('https://localhost:5001/api/login', {
+        fetch('http://192.168.1.27:5000/api/login', {
             method: 'POST',
             headers :{
                 'content-type' : 'application/json'

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Turmas from '../../components/Turmas';
+import MenuEdux from '../../components/menu';
+
 
 const Turma = () => {
 
@@ -8,14 +10,14 @@ const Turma = () => {
     Get();
   }, []);
 
-  const [Descricao, setDescricao] = useState('');
+  const [descricao, setdescricao] = useState('');
   const [IdCurso, setCurso] = useState([]);
 
   const Get = () => {
-    fetch('https://localhost:5001/api/Turma')
+    fetch('http://192.168.1.27:5000/api/Turma')
       .then(response => response.json())
       .then(data => {
-        setDescricao(data.data)
+        setdescricao(data.data)
         setCurso(data.data)
         console.log(data.data);
       })
@@ -23,15 +25,17 @@ const Turma = () => {
   }
 
   const turma = ({ item }) => (
-    <Turmas descricao={item.descricao} idcurso={item.idcurso} />
+    <Turmas descricao={item.descricao} idcurso={item.idCurso} />
   );
 
   return (
+  
     <View style={styles.container}>
-      <Text style={styles.Descricao}>Turmas : </Text>
+      <MenuEdux></MenuEdux>
+      <Text style={styles.title}>Turmas : </Text>
       <View style={styles.flat}>
         <FlatList
-          data={Descricao}
+          data={descricao}
           renderItem={turma}
         />
       </View>
@@ -42,20 +46,21 @@ const Turma = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems:'center',
   },
 
-  Descricao: {
-    fontSize: 20,
-    fontFamily: 'sans-serif',
-    padding: 15,
-    color: 'purple',
+  title: {
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    fontSize: 40,
+    color: '#9200D6',
+    marginTop: 120
   },
 
   flat: {
-    width: 400,
+    marginTop:50,
+    width: 350,
     borderColor: 'purple',
-
   }
 });
 
